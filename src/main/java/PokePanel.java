@@ -79,7 +79,7 @@ public class PokePanel extends JPanel {
                 currentPokemonName = null;
             }
             fetchPokeNumLabel.setText(String.valueOf(currentPokemon));
-            fetchPokeNameLabel.setText(String.valueOf(currentPokemonName));
+            fetchPokeNameLabel.setText(String.valueOf(Pokedex.pokedex.pokemonStorage.getPokeName(currentPokemon)));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

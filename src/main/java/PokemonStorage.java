@@ -1,3 +1,4 @@
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
@@ -72,7 +73,9 @@ public class PokemonStorage {
         String resp = new String(response);
         JSONTokener tokener = new JSONTokener(resp);
         JSONObject root = new JSONObject(tokener);
-        String id = (String) root.get("forms");
-        return id;
+        JSONArray formsArray = (JSONArray) root.get("forms");
+        JSONObject formMap = (JSONObject) formsArray.get(0);
+        String name = (String) formMap.get("name");
+        return name;
     }
 }
