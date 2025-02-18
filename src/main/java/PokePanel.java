@@ -12,6 +12,7 @@ public class PokePanel extends JPanel {
     JLabel nameLabel = new JLabel();
     JLabel frontIconLabel = new JLabel();
     JLabel fetchPokeNumLabel = new JLabel();
+    JLabel fetchPokeNameLabel = new JLabel();
     ImageIcon backIcon = null;
     ImageIcon frontIcon = null;
     JButton leftButton = new JButton("<");
@@ -36,6 +37,9 @@ public class PokePanel extends JPanel {
         fetchPokeNumLabel.setVerticalTextPosition(JLabel.TOP);
         fetchPokeNumLabel.setHorizontalTextPosition(JLabel.CENTER);
         add(fetchPokeNumLabel);
+        fetchPokeNameLabel.setVerticalTextPosition(JLabel.TOP);
+        fetchPokeNameLabel.setHorizontalTextPosition(JLabel.CENTER);
+        add(fetchPokeNameLabel);
         inputPokeNameNum.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String dex = inputPokeNameNum.getText();
@@ -75,6 +79,7 @@ public class PokePanel extends JPanel {
                 currentPokemonName = null;
             }
             fetchPokeNumLabel.setText(String.valueOf(currentPokemon));
+            fetchPokeNameLabel.setText(String.valueOf(currentPokemonName));
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -64,4 +64,15 @@ public class PokemonStorage {
         Integer id = (Integer) root.get("id");
         return id;
     }
+    public String getPokeName(int pokeNum) throws IOException {
+        URLConnection connection = new URL(getPokeURL(pokeNum)).openConnection();
+        InputStream is = connection.getInputStream();
+        System.out.println(connection.getContentType());
+        byte[] response = is.readAllBytes();
+        String resp = new String(response);
+        JSONTokener tokener = new JSONTokener(resp);
+        JSONObject root = new JSONObject(tokener);
+        String id = (String) root.get("forms");
+        return id;
+    }
 }
