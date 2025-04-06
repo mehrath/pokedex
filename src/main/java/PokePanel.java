@@ -20,7 +20,7 @@ public class PokePanel extends JPanel {
     JTextField inputPokeNameNum = new JTextField(10);
     int currentPokemon = 1;
     String currentPokemonName = null;
-    String maxClaimsHeCanCode = "Max is a cute avali";
+    String maxCanCode = "Maxi likes Faputa";
     public PokePanel(){
         nameLabel.setVerticalTextPosition(JLabel.TOP);
         nameLabel.setHorizontalTextPosition(JLabel.CENTER);
@@ -85,6 +85,12 @@ public class PokePanel extends JPanel {
         }
         String front_default = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_DEFAULT));
         String back_default = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_DEFAULT));
+        String front_shiny = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_SHINY_DEFAULT));
+        String back_shiny = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_SHINY_DEFAULT));
+        String front_female = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_FEMALE));
+        String back_female = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_FEMALE));
+        String front_shiny_female = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_SHINY_FEMALE));
+        String back_shiny_female = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_SHINY_FEMALE));
         if (front_default != null){
             try {
                 setFrontIcon(front_default);
@@ -99,6 +105,55 @@ public class PokePanel extends JPanel {
                 ex.printStackTrace();
             }
         }
+        if (front_shiny != null){
+            try {
+                setFrontIcon(front_shiny);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (back_shiny != null){
+            try {
+                setBackIcon(back_shiny);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (front_female != null){
+            try {
+                setFrontIcon(front_female);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (back_female != null){
+            try {
+                setBackIcon(back_female);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (front_shiny_female != null){
+            try {
+                setFrontIcon(front_shiny_female);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+        if (back_shiny_female != null){
+            try {
+                setBackIcon(back_shiny_female);
+            } catch (MalformedURLException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public void setFrontIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        frontIcon = new ImageIcon(new URL(url));
+        frontIconLabel.setIcon(frontIcon);
+        frontIconLabel.setText("front view");
     }
     public void setBackIcon(String url) throws MalformedURLException {
         if (url == null) return;
@@ -107,10 +162,5 @@ public class PokePanel extends JPanel {
         backIconLabel.setText("back view");
 
     }
-    public void setFrontIcon(String url) throws MalformedURLException {
-        if (url == null) return;
-        frontIcon = new ImageIcon(new URL(url));
-        frontIconLabel.setIcon(frontIcon);
-        frontIconLabel.setText("front view");
-    }
 }
+
