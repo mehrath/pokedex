@@ -8,9 +8,15 @@ import java.util.Map;
 
 public class PokePanel extends JPanel {
     JLabel iconLabels[] = new JLabel[PokemonStorage.Appearance.values().length];
-    JLabel backIconLabel = new JLabel();
     JLabel nameLabel = new JLabel();
-    JLabel frontIconLabel = new JLabel();
+    JLabel backDefaultIconLabel = new JLabel();
+    JLabel frontDefaultIconLabel = new JLabel();
+    JLabel backShinyIconLabel = new JLabel();
+    JLabel frontShinyIconLabel = new JLabel();
+    JLabel backFemaleIconLabel = new JLabel();
+    JLabel frontFemaleIconLabel = new JLabel();
+    JLabel backFemaleShinyIconLabel = new JLabel();
+    JLabel frontFemaleShinyIconLabel = new JLabel();
     JLabel fetchPokeNumLabel = new JLabel();
     JLabel fetchPokeNameLabel = new JLabel();
     ImageIcon backIcon = null;
@@ -28,12 +34,30 @@ public class PokePanel extends JPanel {
         add(inputPokeNameNum);
         add(leftButton);
         add(rightButton);
-        backIconLabel.setHorizontalTextPosition(JLabel.CENTER);
-        backIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
-        add(backIconLabel);
-        frontIconLabel.setHorizontalTextPosition(JLabel.CENTER);
-        frontIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
-        add(frontIconLabel);
+        backDefaultIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        backDefaultIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(backDefaultIconLabel);
+        frontDefaultIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        frontDefaultIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(frontDefaultIconLabel);
+        backShinyIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        backShinyIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(backShinyIconLabel);
+        frontShinyIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        frontShinyIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(frontShinyIconLabel);
+        backFemaleIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        backFemaleIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(backFemaleIconLabel);
+        frontFemaleIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        frontFemaleIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(frontFemaleIconLabel);
+        backFemaleShinyIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        backFemaleShinyIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(backFemaleShinyIconLabel);
+        frontFemaleShinyIconLabel.setHorizontalTextPosition(JLabel.CENTER);
+        frontFemaleShinyIconLabel.setVerticalTextPosition(JLabel.BOTTOM);
+        add(frontFemaleShinyIconLabel);
         fetchPokeNumLabel.setVerticalTextPosition(JLabel.TOP);
         fetchPokeNumLabel.setHorizontalTextPosition(JLabel.CENTER);
         add(fetchPokeNumLabel);
@@ -93,74 +117,109 @@ public class PokePanel extends JPanel {
         String back_shiny_female = (String) sprites.get(Pokedex.pokedex.pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_SHINY_FEMALE));
         if (front_default != null){
             try {
-                setFrontIcon(front_default);
+                setFrontDefaultIcon(front_default);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (back_default != null){
             try {
-                setBackIcon(back_default);
+                setBackDefaultIcon(back_default);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (front_shiny != null){
             try {
-                setFrontIcon(front_shiny);
+                setFrontShinyIcon(front_shiny);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (back_shiny != null){
             try {
-                setBackIcon(back_shiny);
+                setBackShinyIcon(back_shiny);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (front_female != null){
             try {
-                setFrontIcon(front_female);
+                setFrontFemaleIcon(front_female);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (back_female != null){
             try {
-                setBackIcon(back_female);
+                setBackFemaleIcon(back_female);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (front_shiny_female != null){
             try {
-                setFrontIcon(front_shiny_female);
+                setFrontShinyFemaleIcon(front_shiny_female);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
         if (back_shiny_female != null){
             try {
-                setBackIcon(back_shiny_female);
+                setBackShinyFemaleIcon(back_shiny_female);
             } catch (MalformedURLException ex) {
                 ex.printStackTrace();
             }
         }
     }
 
-    public void setFrontIcon(String url) throws MalformedURLException {
+    public void setFrontDefaultIcon(String url) throws MalformedURLException {
         if (url == null) return;
         frontIcon = new ImageIcon(new URL(url));
-        frontIconLabel.setIcon(frontIcon);
-        frontIconLabel.setText("front view");
+        frontDefaultIconLabel.setIcon(frontIcon);
+        frontDefaultIconLabel.setText("front view");
     }
-    public void setBackIcon(String url) throws MalformedURLException {
+    public void setBackDefaultIcon(String url) throws MalformedURLException {
         if (url == null) return;
         backIcon = new ImageIcon(new URL(url));
-        backIconLabel.setIcon(backIcon);
-        backIconLabel.setText("back view");
-
+        backDefaultIconLabel.setIcon(backIcon);
+        backDefaultIconLabel.setText("back view");
+    }
+    public void setFrontFemaleIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        frontIcon = new ImageIcon(new URL(url));
+        frontShinyIconLabel.setIcon(frontIcon);
+        frontShinyIconLabel.setText("front view");
+    }
+    public void setBackFemaleIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        backIcon = new ImageIcon(new URL(url));
+        backShinyIconLabel.setIcon(backIcon);
+        backShinyIconLabel.setText("back view");
+    }
+    public void setFrontShinyIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        frontIcon = new ImageIcon(new URL(url));
+        frontFemaleIconLabel.setIcon(frontIcon);
+        frontFemaleIconLabel.setText("front view");
+    }
+    public void setBackShinyIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        backIcon = new ImageIcon(new URL(url));
+        backFemaleIconLabel.setIcon(backIcon);
+        backFemaleIconLabel.setText("back view");
+    }
+    public void setFrontShinyFemaleIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        frontIcon = new ImageIcon(new URL(url));
+        frontFemaleShinyIconLabel.setIcon(frontIcon);
+        frontFemaleShinyIconLabel.setText("front view");
+    }
+    public void setBackShinyFemaleIcon(String url) throws MalformedURLException {
+        if (url == null) return;
+        backIcon = new ImageIcon(new URL(url));
+        backFemaleShinyIconLabel.setIcon(backIcon);
+        backFemaleShinyIconLabel.setText("back view");
     }
 }
 

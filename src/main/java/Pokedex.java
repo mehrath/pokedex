@@ -18,6 +18,12 @@ public class Pokedex {
         Map sprites = pokemonStorage.getPokeSprites(1);
         String front_default = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_DEFAULT));
         String back_default = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_DEFAULT));
+        String front_female = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_FEMALE));
+        String back_female = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_FEMALE));
+        String front_shiny = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_SHINY_DEFAULT));
+        String back_shiny = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_SHINY_DEFAULT));
+        String front_shiny_female = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.FRONT_SHINY_FEMALE));
+        String back_shiny_female = (String) sprites.get(pokemonStorage.appearanceSpriteMap.get(PokemonStorage.Appearance.BACK_SHINY_FEMALE));
         //"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/380.png";
         drawImg(front_default);
     }
@@ -51,7 +57,7 @@ public class Pokedex {
         PokePanel right_box = new PokePanel();
         container.add(left_box);
         container.add(right_box);
-        frame.setSize(800,600);
+        frame.setSize(2000,1000);
         frame.add(container);
         //frame.add(label);
 
