@@ -189,37 +189,37 @@ public class PokePanel extends JPanel {
         if (url == null) return;
         frontIcon = new ImageIcon(new URL(url));
         frontShinyIconLabel.setIcon(frontIcon);
-        frontShinyIconLabel.setText("front view");
+        frontShinyIconLabel.setText("front view shiny");
     }
     public void setBackFemaleIcon(String url) throws MalformedURLException {
         if (url == null) return;
         backIcon = new ImageIcon(new URL(url));
         backShinyIconLabel.setIcon(backIcon);
-        backShinyIconLabel.setText("back view");
+        backShinyIconLabel.setText("back view shiny");
     }
     public void setFrontShinyIcon(String url) throws MalformedURLException {
         if (url == null) return;
         frontIcon = new ImageIcon(new URL(url));
         frontFemaleIconLabel.setIcon(frontIcon);
-        frontFemaleIconLabel.setText("front view");
+        frontFemaleIconLabel.setText("front view female");
     }
     public void setBackShinyIcon(String url) throws MalformedURLException {
         if (url == null) return;
         backIcon = new ImageIcon(new URL(url));
         backFemaleIconLabel.setIcon(backIcon);
-        backFemaleIconLabel.setText("back view");
+        backFemaleIconLabel.setText("back view female");
     }
     public void setFrontShinyFemaleIcon(String url) throws MalformedURLException {
         if (url == null) return;
         frontIcon = new ImageIcon(new URL(url));
         frontFemaleShinyIconLabel.setIcon(frontIcon);
-        frontFemaleShinyIconLabel.setText("front view");
+        frontFemaleShinyIconLabel.setText("front view shiny female");
     }
     public void setBackShinyFemaleIcon(String url) throws MalformedURLException {
         if (url == null) return;
         backIcon = new ImageIcon(new URL(url));
         backFemaleShinyIconLabel.setIcon(backIcon);
-        backFemaleShinyIconLabel.setText("back view");
+        backFemaleShinyIconLabel.setText("back view shiny female");
     }
 }
 
